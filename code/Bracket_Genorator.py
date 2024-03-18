@@ -24,7 +24,7 @@ import plotly.express as px
 from tqdm import tqdm
 
 import pickle
-import time
+#import time
 
 
 
@@ -643,7 +643,8 @@ if st.button('Generate Bracket'):
         gs.fit(X_train, y_train)
 
         #save trained model in pickle file
-        timestr = time.strftime("%Y%m%d-%H%M")
+
+        #timestr = time.strftime("%Y%m%d-%H%M")
 
 
 

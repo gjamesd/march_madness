@@ -3,12 +3,8 @@ pandas==1.5.3
 pandas-datareader==0.10.0
 xgboost==2.0.3
 pickleshare==0.7.5
-async-timeout @ file:///Users/ec2-user/ci_py311/async-timeout_1678320112070/work
-jinja2-time @ file:///opt/conda/conda-bld/jinja2-time_1649251842261/work
-async-timeout @ file:///Users/ec2-user/ci_py311/async-timeout_1678320112070/work
-plotly @ file:///Users/ec2-user/ci_py311/plotly_1678382250051/work
-scikit-image @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3fh5dyitqb/croot/scikit-image_1682530834592/work
-scikit-learn @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c1cbgsrq20/croot/scikit-learn_1690978919468/work
+plotly==5.9.0
+scikit-image==0.20.0
+scikit-learn==1.3.0
 streamlit==1.31.1
-tqdm @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_03acd6t6ca/croot/tqdm_1679561866522/work
-pip==24.0
+tqdm==4.65.0
