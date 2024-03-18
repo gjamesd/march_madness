@@ -1,6 +1,6 @@
 import streamlit as st
 
-import sklearn
+#import sklearn
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import classification_report
 
@@ -22,7 +22,7 @@ import xgboost as xgb
 
 #import warnings
 #warnings.filterwarnings('ignore')
-from tqdm import tqdm
+#from tqdm import tqdm
 
 import pickle
 #import time
