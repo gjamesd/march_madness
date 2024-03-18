@@ -2,8 +2,6 @@ numpy==1.26.4
 pandas==1.5.3
 pandas-datareader==0.10.0
 xgboost==2.0.3
-matplotlib @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_41fhwn4tj9/croot/matplotlib-suite_1679593479845/work
-matplotlib-inline @ file:///Users/ec2-user/ci_py311/matplotlib-inline_1678317544666/work
 pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 cloudpickle @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c57ujq_pgm/croot/cloudpickle_1683040025620/work
 async-timeout @ file:///Users/ec2-user/ci_py311/async-timeout_1678320112070/work

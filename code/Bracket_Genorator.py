@@ -5,8 +5,8 @@ from sklearn.metrics import classification_report
 
 # to solve problems that I am encounterinbg
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt #plotting for visualization purposes of story telling
+#import seaborn as sns
+#import matplotlib.pyplot as plt #plotting for visualization purposes of story telling
 import numpy as np
 
 #from tqdm import tqdm
