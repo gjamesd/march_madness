@@ -1,4 +1,5 @@
-numpy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_bdk7p7tnsw/croot/numpy_and_numpy_base_1682520579379/work
+numpy==1.26.4
+numpy_and_numpy_base_1682520579379/work
 numpydoc @ file:///Users/ec2-user/ci_py311/numpydoc_1678393034712/work
 pandas==1.5.3
 pandas-datareader==0.10.0
