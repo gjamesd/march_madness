@@ -1,5 +1,6 @@
 import streamlit as st
 
+import sklearn
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.metrics import classification_report
 
