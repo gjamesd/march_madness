@@ -37,7 +37,7 @@ from imblearn.over_sampling import SMOTE
 #ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
 
 
-ticker_data = pd.read_csv('data/odds_.csv',  encoding='latin-1')
+ticker_data = pd.read_csv('data/odds.csv',  encoding='latin-1')
 #https://www.sportingnews.com/us/ncaa-basketball/news/march-madness-odds-2024-updated-betting-every-team-win-ncaa-tournament/9b72561b3b4ba1707192901d
 teams_df = pd.read_csv("data/MTeams.csv")
 power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
