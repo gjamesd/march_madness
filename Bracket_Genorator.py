@@ -608,11 +608,12 @@ if st.button('Generate Bracket'):
 
 
     input_str = sixteen_1+"_"+sixteen_2+"_"+eleven_1+"_"+eleven_2+".csv"
-    st.write(input_str)
+
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
     val = pd.read_csv('val_data/'+input_str)
     st.write(train.head())
+    st.write(train.columns)
     train = train.drop(columns = ["HSTeamID","LSTeamID",])
     val = val.drop(columns = ["HSTeamID","LSTeamID",])
 
