@@ -612,7 +612,7 @@ if st.button('Generate Bracket'):
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
     val = pd.read_csv('val_data/'+input_str)
-=
+    
     train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
     val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
