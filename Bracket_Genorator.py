@@ -612,10 +612,9 @@ if st.button('Generate Bracket'):
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
     val = pd.read_csv('val_data/'+input_str)
-    st.write(train.head())
-    st.write(train.columns)
-    train = train.drop(columns = ["HSTeamID","LSTeamID",])
-    val = val.drop(columns = ["HSTeamID","LSTeamID",])
+=
+    train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
+    val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
     def train_predict(t_df, v_df):
         st.write("Inside Train")
@@ -641,7 +640,7 @@ if st.button('Generate Bracket'):
             'n_estimators' :np.arange(50, 1200, 50),
             #'objective': ['f1'],
             }
-
+        st.write("Cross Validating")
         gs = RandomizedSearchCV(xclass, parameters, cv = 5)
         #gs = GridSearchCV(xclass, parameters, cv = 5)
         gs.fit(X_train, y_train)
@@ -651,7 +650,7 @@ if st.button('Generate Bracket'):
         #timestr = time.strftime("%Y%m%d-%H%M")
 
 
-
+        st.write("Predicting")
         boost_preds = gs.predict(X_val)
         return boost_preds, y_val, gs
 
