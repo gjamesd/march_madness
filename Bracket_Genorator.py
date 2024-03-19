@@ -633,12 +633,12 @@ if st.button('Generate Bracket'):
     t_copy = train.copy()
 
     y_train = train['target']
-    y_val = val['target']
 
     trian = train[cols]
     t_copy = t_copy[cols]
 
     val = pd.read_csv('val_data/'+input_str)
+    y_val = val['target']
     val = val[cols]
 
     #t_copy = t_copy.drop(columns = ["Unnamed: 0"])
