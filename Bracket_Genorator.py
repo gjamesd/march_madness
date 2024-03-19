@@ -612,12 +612,12 @@ if st.button('Generate Bracket'):
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
     val = pd.read_csv('val_data/'+input_str)
-    
+
     train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
     val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
     def train_predict(t_df, v_df):
-        st.write("Inside Train")
+
         t_df = t_df.astype(float)
         v_df = v_df.astype(float)
 
@@ -640,8 +640,9 @@ if st.button('Generate Bracket'):
             'n_estimators' :np.arange(50, 1200, 50),
             #'objective': ['f1'],
             }
-        st.write("Cross Validating")
+
         gs = RandomizedSearchCV(xclass, parameters, cv = 5)
+        st.write("Cross Validating")
         #gs = GridSearchCV(xclass, parameters, cv = 5)
         gs.fit(X_train, y_train)
 
@@ -709,6 +710,7 @@ if st.button('Generate Bracket'):
 
 
     def build_rounds(df, match_ups, tourney_round):
+        st.write('inside build rounds')
         '''
         Building the test data set from the total_dictionary columns to mirror
         our testing / validation data set
