@@ -609,7 +609,7 @@ if st.button('Generate Bracket'):
         
         df2 = pd.merge(left = df, right = teams2, on = 'TeamName') 
         
-        df2.to_csv('../data/power_test.csv')
+        df2.to_csv('data/power_test.csv')
         ps1 = pd.DataFrame(df2.groupby(by = "Season"))
         empty = {}
         #print(ps1.columns.tolist())
@@ -634,9 +634,9 @@ if st.button('Generate Bracket'):
     
     input_str = sixteen_1+"_"+sixteen_2+"_"+eleven_1+"_"+eleven_2+".csv"
     
-    train = pd.read_csv('../train_data/'+input_str)
+    train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
-    val = pd.read_csv('../val_data/'+input_str)
+    val = pd.read_csv('val_data/'+input_str)
     
     train = train.drop(columns = ["HSTeamID","LSTeamID",])
     val = val.drop(columns = ["HSTeamID","LSTeamID",])
@@ -652,7 +652,7 @@ if st.button('Generate Bracket'):
 
 
 
-        desired_ratio = {0: int(len(X_train) * 0.4), 1: int(len(X_train) * 0.6)}
+        #desired_ratio = {0: int(len(X_train) * 0.4), 1: int(len(X_train) * 0.6)}
 
         # Instantiate SMOTE with the desired ratio
         smote = SMOTE(random_state=42)
