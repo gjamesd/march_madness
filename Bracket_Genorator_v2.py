@@ -30,11 +30,25 @@ from imblearn.over_sampling import SMOTE
 
 
 
-teams_df = pd.read_csv("../data/MTeams.csv")
-power_seeds_df = pd.read_csv("../data/PowerSeeds.csv")
+#teams_df = pd.read_csv("../data/MTeams.csv")
+#power_seeds_df = pd.read_csv("../data/PowerSeeds.csv")
 
-page_names = pd.read_csv("../dictionaries/page_rank_names.csv")
-ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
+#page_names = pd.read_csv("../dictionaries/page_rank_names.csv")
+#ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
+
+
+ticker_data = pd.read_csv('data/odds_.csv',  encoding='latin-1')
+#https://www.sportingnews.com/us/ncaa-basketball/news/march-madness-odds-2024-updated-betting-every-team-win-ncaa-tournament/9b72561b3b4ba1707192901d
+teams_df = pd.read_csv("data/MTeams.csv")
+power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
+
+page_names = pd.read_csv("dictionaries/page_rank_names.csv")
+total_dict = pickle.load(open('dictionaries/total_dict.pickle', 'rb'))
+#psd = pickle.load(open('dictionaries/psd.pickle', 'rb'))
+conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
+conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
+page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
+tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
 
 
 cols = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
@@ -692,12 +706,12 @@ if st.button('Generate Bracket'):
     #st.write(xgc.best_params_)
 
 
-    total_dict = pickle.load(open('../dictionaries/total_dict.pickle', 'rb'))
+    #total_dict = pickle.load(open('../dictionaries/total_dict.pickle', 'rb'))
     #psd = pickle.load(open('../dictionaries/psd.pickle', 'rb'))
-    conf_affil = pickle.load(open('../dictionaries/conf_affil.pickle', 'rb'))
-    conf_champs = pickle.load(open('../dictionaries/conf_champs.pickle', 'rb'))
-    page_rank = pickle.load(open('../dictionaries/page_rank.pickle', 'rb'))
-    tw = pickle.load(open('../dictionaries/tw.pickle', 'rb'))
+    #conf_affil = pickle.load(open('../dictionaries/conf_affil.pickle', 'rb'))
+    #conf_champs = pickle.load(open('../dictionaries/conf_champs.pickle', 'rb'))
+    #page_rank = pickle.load(open('../dictionaries/page_rank.pickle', 'rb'))
+    #tw = pickle.load(open('../dictionaries/tw.pickle', 'rb'))
     
     
     
