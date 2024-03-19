@@ -623,7 +623,7 @@ if st.button('Generate Bracket'):
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
     val = pd.read_csv('val_data/'+input_str)
-
+    t_copy = t_copy.drop(columns = ["Unnamed: 0"])
     train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
     val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
@@ -924,4 +924,4 @@ if st.button('Generate Bracket'):
     #st.write(classification_report(y_a, bp))
     st.write(" ")
     #st.write(total_dict['1386'])
-    full_bracket(train, xgc, loaded_model = False)
+    full_bracket(t_copy, xgc, loaded_model = False)
