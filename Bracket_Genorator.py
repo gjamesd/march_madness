@@ -656,7 +656,7 @@ if st.button('Generate Bracket'):
         st.write("Cross Validating")
         #gs = GridSearchCV(xclass, parameters, cv = 5)
         gs.fit(X_train, y_train)
-
+        st.write("Model fitted")
         #save trained model in pickle file
 
         #timestr = time.strftime("%Y%m%d-%H%M")
