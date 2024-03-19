@@ -28,7 +28,7 @@ import pickle
 #import time
 
 
-col = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
+cols = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
  'LSFTA','HS_op_To','LS_avg_score','LS_op_FMG3','HSOR','LS_loss','LS_op_FGM',
  'HS_wins','LSPF','HS_low_conf','elite_8','LSDR','HS_op_FGM','LSFGM','HS_mid_conf',
  'LS_op_OR','LSTO','HS_op_FGA','HSBlk','HS_op_FGA3','LS_low_conf','LS_op_DR',
