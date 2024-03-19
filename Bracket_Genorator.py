@@ -44,7 +44,7 @@ conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
 conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
 page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
 tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
-st.write(tw)
+
 
 
 str_test = ''
