@@ -38,9 +38,9 @@ power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
 page_names = pd.read_csv("dictionaries/page_rank_names.csv")
 
 
-# str_test = ''
-# for i in range(len(ticker_data)):
-#     str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
+str_test = ''
+for i in range(len(ticker_data)):
+    str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
 
 st.set_page_config(
 
