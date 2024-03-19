@@ -649,8 +649,8 @@ if st.button('Generate Bracket'):
         y_train = t_df['target']
         y_val = v_df['target']
 
-        X_train = X_train[cols]
-        X_val = X_val[cols]
+        X_train = t_df[cols]
+        X_val = v_df[cols]
 
         X_train = X_train.astype(float)
         X_val = X_val.astype(float)
