@@ -439,6 +439,8 @@ def get_next(n_games, prev_round, result):
 
 def full_bracket(df, xgc, loaded_model = False):
 
+    st.write("inside full bracket")
+
     if loaded_model == False:
         xgc = xgc
     else:
@@ -668,7 +670,7 @@ if st.button('Generate Bracket'):
     conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
     page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
     tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
-
+    st.write("Dictionaries done been got")
 
 
 
