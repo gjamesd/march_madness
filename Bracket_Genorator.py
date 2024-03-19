@@ -30,7 +30,7 @@ import pickle
 
 
 
-ticker_data = pd.read_csv('data/odds.csv')
+#ticker_data = pd.read_csv('data/odds.csv')
 #https://www.sportingnews.com/us/ncaa-basketball/news/march-madness-odds-2024-updated-betting-every-team-win-ncaa-tournament/9b72561b3b4ba1707192901d
 teams_df = pd.read_csv("data/MTeams.csv")
 power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
@@ -38,9 +38,9 @@ power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
 page_names = pd.read_csv("dictionaries/page_rank_names.csv")
 
 
-str_test = ''
-for i in range(len(ticker_data)):
-    str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
+# str_test = ''
+# for i in range(len(ticker_data)):
+#     str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
 
 st.set_page_config(
 
@@ -66,43 +66,43 @@ ranked_str = get_page_names(page_names)
 st.image("viz/mm.jpeg")
 st.write("# March Madness Machine Learning Generated Bracket :) ")
 
-ticker_html = f"""
-<div class="ticker-wrap">
-<div class="ticker">
-  <div class="ticker__item">{str_test}</div>
-  <div class="ticker__item">{str_test}</div> <!-- Duplicate content for a seamless loop -->
-</div>
-</div>
-<style>
-@keyframes ticker {{
-  0% {{ transform: translateX(0); }}
-  100% {{ transform: translateX(-50%); }} /* Move only half of the total width for looping */
-}}
-.ticker-wrap {{
-  width: 100%;
-  overflow: hidden;
-  background-color: #333;
-  padding: 10px 0;
-  color: #FFF;
-  font-size: 20px;
-  box-sizing: border-box;
-
-}}
-.ticker {{
-  display: flex;
-  width: fit-content;
-  animation: ticker 750s linear infinite;
-}}
-.ticker__item {{
-  white-space: nowrap;
-  padding-right: 75px; /* Space between items */
-}}
-</style>
-"""
-
-st.write("Draft Kings Betting Odds")
-st.markdown(ticker_html, unsafe_allow_html=True)
-st.markdown("<hr>", unsafe_allow_html=True)
+# ticker_html = f"""
+# <div class="ticker-wrap">
+# <div class="ticker">
+#   <div class="ticker__item">{str_test}</div>
+#   <div class="ticker__item">{str_test}</div> <!-- Duplicate content for a seamless loop -->
+# </div>
+# </div>
+# <style>
+# @keyframes ticker {{
+#   0% {{ transform: translateX(0); }}
+#   100% {{ transform: translateX(-50%); }} /* Move only half of the total width for looping */
+# }}
+# .ticker-wrap {{
+#   width: 100%;
+#   overflow: hidden;
+#   background-color: #333;
+#   padding: 10px 0;
+#   color: #FFF;
+#   font-size: 20px;
+#   box-sizing: border-box;
+#
+# }}
+# .ticker {{
+#   display: flex;
+#   width: fit-content;
+#   animation: ticker 750s linear infinite;
+# }}
+# .ticker__item {{
+#   white-space: nowrap;
+#   padding-right: 75px; /* Space between items */
+# }}
+# </style>
+# """
+#
+# st.write("Draft Kings Betting Odds")
+# st.markdown(ticker_html, unsafe_allow_html=True)
+# st.markdown("<hr>", unsafe_allow_html=True)
 
 
 ticker_html2 = f"""
