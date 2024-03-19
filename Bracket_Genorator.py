@@ -38,6 +38,15 @@ power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
 page_names = pd.read_csv("dictionaries/page_rank_names.csv")
 
 
+total_dict = pickle.load(open('dictionaries/total_dict.pickle', 'rb'))
+#psd = pickle.load(open('dictionaries/psd.pickle', 'rb'))
+conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
+conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
+page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
+tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
+
+
+
 str_test = ''
 for i in range(len(ticker_data)):
     str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
@@ -605,7 +614,7 @@ if st.button('Generate Bracket'):
         return result_dict
 
     psd  = create_power_seeds_dict(power_seeds)
-    #st.write(power_seeds.tail(5))
+    #st.write(psd)
 
 
 
@@ -664,12 +673,12 @@ if st.button('Generate Bracket'):
     #st.write(xgc.best_params_)
 
 
-    total_dict = pickle.load(open('dictionaries/total_dict.pickle', 'rb'))
-    #psd = pickle.load(open('dictionaries/psd.pickle', 'rb'))
-    conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
-    conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
-    page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
-    tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
+    # total_dict = pickle.load(open('dictionaries/total_dict.pickle', 'rb'))
+    # #psd = pickle.load(open('dictionaries/psd.pickle', 'rb'))
+    # conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
+    # conf_champs = pickle.load(open('dictionaries/conf_champs.pickle', 'rb'))
+    # page_rank = pickle.load(open('dictionaries/page_rank.pickle', 'rb'))
+    # tw = pickle.load(open('dictionaries/tw.pickle', 'rb'))
     st.write("Dictionaries done been got")
 
 
