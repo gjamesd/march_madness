@@ -30,7 +30,7 @@ import pickle
 
 
 
-#ticker_data = pd.read_csv('data/odds.csv')
+ticker_data = pd.read_csv('data/odds2.csv')
 #https://www.sportingnews.com/us/ncaa-basketball/news/march-madness-odds-2024-updated-betting-every-team-win-ncaa-tournament/9b72561b3b4ba1707192901d
 teams_df = pd.read_csv("data/MTeams.csv")
 power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
@@ -100,7 +100,7 @@ st.write("# March Madness Machine Learning Generated Bracket :) ")
 # </style>
 # """
 #
-# st.write("Draft Kings Betting Odds")
+st.write("Draft Kings Betting Odds")
 # st.markdown(ticker_html, unsafe_allow_html=True)
 # st.markdown("<hr>", unsafe_allow_html=True)
 
