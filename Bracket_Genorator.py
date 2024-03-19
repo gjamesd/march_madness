@@ -632,6 +632,9 @@ if st.button('Generate Bracket'):
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
 
+    y_train = train['target']
+    y_val = val['target']
+
     trian = train[cols]
     t_copy = t_copy[cols]
 
@@ -647,10 +650,10 @@ if st.button('Generate Bracket'):
         t_df = t_df.astype(float)
         v_df = v_df.astype(float)
 
-        X_train = t_df.drop(columns = ['target'])
-        y_train = t_df['target']
-        X_val = v_df.drop(columns =['target'])
-        y_val = v_df['target']
+        #X_train = t_df.drop(columns = ['target'])
+        y_train = y_train #t_df['target']
+        #X_val = v_df.drop(columns =['target'])
+        y_val = y_val#v_df['target']
 
         # y_train = t_df['target']
         # y_val = v_df['target']
