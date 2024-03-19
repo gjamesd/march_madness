@@ -627,47 +627,47 @@ if st.button('Generate Bracket'):
     train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
     val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
-    # def train_predict(t_df, v_df):
-    #
-    #     t_df = t_df.astype(float)
-    #     v_df = v_df.astype(float)
-    #
-    #     X_train = t_df.drop(columns = ['target'])
-    #     y_train = t_df['target']
-    #     X_val = v_df.drop(columns =['target'])
-    #     y_val = v_df['target']
-    #
-    # #     #splitting into train_test_split
-    #
-    #     xclass = xgb.XGBClassifier()
-    #
-    #     st.write("Training model")
-    #
-    #     parameters = {
-    #         'learning_rate':  np.arange(.01, 1, .01),
-    #         'max_depth': np.arange(5, 50, 3), #
-    #         'subsample': np.arange(.3, .7, .1),
-    #         'colsample_bytree': np.arange(.1, 1, .1),
-    #         'n_estimators' :np.arange(50, 1200, 50),
-    #         #'objective': ['f1'],
-    #         }
-    #
-    #     gs = RandomizedSearchCV(xclass, parameters, cv = 5)
-    #     st.write("Cross Validating")
-    #     #gs = GridSearchCV(xclass, parameters, cv = 5)
-    #     gs.fit(X_train, y_train)
-    #     st.write("Model fitted")
-    #     #save trained model in pickle file
-    #
-    #     #timestr = time.strftime("%Y%m%d-%H%M")
-    #
-    #
-    #     st.write("Predicting")
-    #     boost_preds = gs.predict(X_val)
-    #     return boost_preds, y_val, gs
-    #
-    #
-    # bp,y_a, xgc = train_predict(train, val)
+    def train_predict(t_df, v_df):
+
+        t_df = t_df.astype(float)
+        v_df = v_df.astype(float)
+
+        X_train = t_df.drop(columns = ['target'])
+        y_train = t_df['target']
+        X_val = v_df.drop(columns =['target'])
+        y_val = v_df['target']
+
+    #     #splitting into train_test_split
+
+        xclass = xgb.XGBClassifier()
+
+        st.write("Training model")
+
+        parameters = {
+            'learning_rate':  np.arange(.01, 1, .01),
+            'max_depth': np.arange(5, 50, 3), #
+            'subsample': np.arange(.3, .7, .1),
+            'colsample_bytree': np.arange(.1, 1, .1),
+            'n_estimators' :np.arange(50, 1200, 50),
+            #'objective': ['f1'],
+            }
+
+        gs = RandomizedSearchCV(xclass, parameters, cv = 5)
+        st.write("Cross Validating")
+        #gs = GridSearchCV(xclass, parameters, cv = 5)
+        gs.fit(X_train, y_train)
+        st.write("Model fitted")
+        #save trained model in pickle file
+
+        #timestr = time.strftime("%Y%m%d-%H%M")
+
+
+        st.write("Predicting")
+        boost_preds = gs.predict(X_val)
+        return boost_preds, y_val, gs
+
+
+    bp,y_a, xgc = train_predict(train, val)
 
     #st.write(classification_report(y_a, bp))
     #st.write(xgc.best_params_)
