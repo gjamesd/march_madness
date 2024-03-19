@@ -29,7 +29,7 @@ import pickle
 from imblearn.over_sampling import SMOTE
 
 
-ticker_data = pd.read_csv('../data/odds_.csv',  encoding='latin-1')
+ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
 teams_df = pd.read_csv("../data/MTeams.csv")
 power_seeds_df = pd.read_csv("../data/PowerSeeds.csv")
 
