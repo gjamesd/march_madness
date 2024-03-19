@@ -29,11 +29,12 @@ import pickle
 from imblearn.over_sampling import SMOTE
 
 
-ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
+
 teams_df = pd.read_csv("../data/MTeams.csv")
 power_seeds_df = pd.read_csv("../data/PowerSeeds.csv")
 
 page_names = pd.read_csv("../dictionaries/page_rank_names.csv")
+ticker_data = pd.read_csv('../data/odds.csv',  encoding='latin-1')
 
 
 cols = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
