@@ -946,7 +946,7 @@ if st.button('Generate Bracket'):
     
     
     bp,y_a, xgc = train_predict(train, val)
-    st.markdown(classification_report(y_a, bp))
+    #st.markdown(classification_report(y_a, bp))
     feat_imp = xgc.best_estimator_.feature_importances_
     feat_names2 = xgc.feature_names_in_
     #fig = px.bar(x=feat_names2, y=feat_imp,
