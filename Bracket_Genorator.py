@@ -631,29 +631,35 @@ if st.button('Generate Bracket'):
 
     train = pd.read_csv('train_data/'+input_str)
     t_copy = train.copy()
+
+    trian = train[cols]
+    t_copy = t_copy[cols]
+
     val = pd.read_csv('val_data/'+input_str)
-    t_copy = t_copy.drop(columns = ["Unnamed: 0"])
-    train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
-    val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
+    val = val[cols]
+
+    #t_copy = t_copy.drop(columns = ["Unnamed: 0"])
+    #train = train.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
+    #val = val.drop(columns = ["Unnamed: 0", "HSTeamID","LSTeamID",])
 
     def train_predict(t_df, v_df):
 
-        # t_df = t_df.astype(float)
-        # v_df = v_df.astype(float)
-        #
-        # X_train = t_df.drop(columns = ['target'])
-        # y_train = t_df['target']
-        # X_val = v_df.drop(columns =['target'])
-        # y_val = v_df['target']
+        t_df = t_df.astype(float)
+        v_df = v_df.astype(float)
 
+        X_train = t_df.drop(columns = ['target'])
         y_train = t_df['target']
+        X_val = v_df.drop(columns =['target'])
         y_val = v_df['target']
 
-        X_train = t_df[cols]
-        X_val = v_df[cols]
-
-        X_train = X_train.astype(float)
-        X_val = X_val.astype(float)
+        # y_train = t_df['target']
+        # y_val = v_df['target']
+        #
+        # X_train = t_df[cols]
+        # X_val = v_df[cols]
+        #
+        # X_train = X_train.astype(float)
+        # X_val = X_val.astype(float)
 
 
     #     #splitting into train_test_split
@@ -947,4 +953,4 @@ if st.button('Generate Bracket'):
     #st.write(classification_report(y_a, bp))
     st.write(" ")
     #st.write(total_dict['1386'])
-    full_bracket(t_copy[cols], xgc, loaded_model = False)
+    full_bracket(t_copy, xgc, loaded_model = False)
