@@ -947,4 +947,4 @@ if st.button('Generate Bracket'):
     #st.write(classification_report(y_a, bp))
     st.write(" ")
     #st.write(total_dict['1386'])
-    full_bracket(t_copy, xgc, loaded_model = False)
+    full_bracket(t_copy[cols], xgc, loaded_model = False)
