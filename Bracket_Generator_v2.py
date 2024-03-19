@@ -88,7 +88,7 @@ ranked_str = get_page_names(page_names)
 
     
 
-st.image("../viz/mm.jpeg")
+st.image("viz/mm.jpeg")
 st.write("# March Madness Machine Learning Generated Bracket :) ")
 
 ticker_html = f"""
