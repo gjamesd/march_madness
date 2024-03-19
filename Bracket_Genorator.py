@@ -28,7 +28,16 @@ import pickle
 #import time
 
 
-
+col = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
+ 'LSFTA','HS_op_To','LS_avg_score','LS_op_FMG3','HSOR','LS_loss','LS_op_FGM',
+ 'HS_wins','LSPF','HS_low_conf','elite_8','LSDR','HS_op_FGM','LSFGM','HS_mid_conf',
+ 'LS_op_OR','LSTO','HS_op_FGA','HSBlk','HS_op_FGA3','LS_low_conf','LS_op_DR',
+ 'LS_op_To','HSFGM3','HSFGM','HS_avg_against','HS_op_FMG3','HSStl','HSAst',
+ 'LSAst','HSPF','HS_op_OR','HSFGA3','HSFTM','LS_wins','LSFGA3','LS_mid_conf',
+ 'HS_avg_score', 'LSStl','HS_loss','LS_op_FGA3','LSFTM','LSFGA','HSFGA',
+ 'LS_avg_against','HS_conf_champ','final_four','championship','LSOR','HSFTA',
+ 'HS_power_conf','LSFGM3','second_round','LS_power_seed','LSBlk','LS_op_FGA',
+ 'HS_op_DR']
 
 ticker_data = pd.read_csv('data/odds_.csv',  encoding='latin-1')
 #https://www.sportingnews.com/us/ncaa-basketball/news/march-madness-odds-2024-updated-betting-every-team-win-ncaa-tournament/9b72561b3b4ba1707192901d
@@ -629,13 +638,23 @@ if st.button('Generate Bracket'):
 
     def train_predict(t_df, v_df):
 
-        t_df = t_df.astype(float)
-        v_df = v_df.astype(float)
+        # t_df = t_df.astype(float)
+        # v_df = v_df.astype(float)
+        #
+        # X_train = t_df.drop(columns = ['target'])
+        # y_train = t_df['target']
+        # X_val = v_df.drop(columns =['target'])
+        # y_val = v_df['target']
 
-        X_train = t_df.drop(columns = ['target'])
         y_train = t_df['target']
-        X_val = v_df.drop(columns =['target'])
         y_val = v_df['target']
+
+        X_train = X_train[cols]
+        X_val = X_val[cols]
+
+        X_train = X_train.astype(float)
+        X_val = X_val.astype(float)
+
 
     #     #splitting into train_test_split
 
@@ -645,10 +664,10 @@ if st.button('Generate Bracket'):
 
         parameters = {
             'learning_rate':  np.arange(.01, .1, .01),
-            'max_depth': np.arange(10, 75, 5), #
+            'max_depth': np.arange(15, 75, 10), #
             'subsample': np.arange(.3, .7, .1),
             'colsample_bytree': np.arange(.1, 1, .1),
-            'n_estimators' :np.arange(50, 1000, 50),
+            'n_estimators' :np.arange(100, 1000, 50),
             #'objective': ['f1'],
             }
 
@@ -908,6 +927,10 @@ if st.button('Generate Bracket'):
 
         #df['Season'] = year_
         df = df.drop(columns = ["HSTeamID","LSTeamID",])
+
+
+        df = df[cols]
+
 
         return df
 
