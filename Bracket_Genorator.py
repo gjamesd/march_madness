@@ -617,6 +617,7 @@ if st.button('Generate Bracket'):
     val = val.drop(columns = ["HSTeamID","LSTeamID",])
 
     def train_predict(t_df, v_df):
+        st.write("Inside Train")
         t_df = t_df.astype(float)
         v_df = v_df.astype(float)
 
