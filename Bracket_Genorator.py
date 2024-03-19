@@ -651,9 +651,9 @@ if st.button('Generate Bracket'):
         v_df = v_df.astype(float)
 
         #X_train = t_df.drop(columns = ['target'])
-        y_train = y_train #t_df['target']
+        #y_train = y_train #t_df['target']
         #X_val = v_df.drop(columns =['target'])
-        y_val = y_val#v_df['target']
+        #y_val = y_val#v_df['target']
 
         # y_train = t_df['target']
         # y_val = v_df['target']
