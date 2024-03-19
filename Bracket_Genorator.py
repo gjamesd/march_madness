@@ -66,43 +66,43 @@ ranked_str = get_page_names(page_names)
 st.image("viz/mm.jpeg")
 st.write("# March Madness Machine Learning Generated Bracket :) ")
 
-# ticker_html = f"""
-# <div class="ticker-wrap">
-# <div class="ticker">
-#   <div class="ticker__item">{str_test}</div>
-#   <div class="ticker__item">{str_test}</div> <!-- Duplicate content for a seamless loop -->
-# </div>
-# </div>
-# <style>
-# @keyframes ticker {{
-#   0% {{ transform: translateX(0); }}
-#   100% {{ transform: translateX(-50%); }} /* Move only half of the total width for looping */
-# }}
-# .ticker-wrap {{
-#   width: 100%;
-#   overflow: hidden;
-#   background-color: #333;
-#   padding: 10px 0;
-#   color: #FFF;
-#   font-size: 20px;
-#   box-sizing: border-box;
-#
-# }}
-# .ticker {{
-#   display: flex;
-#   width: fit-content;
-#   animation: ticker 750s linear infinite;
-# }}
-# .ticker__item {{
-#   white-space: nowrap;
-#   padding-right: 75px; /* Space between items */
-# }}
-# </style>
-# """
-#
+ticker_html = f"""
+<div class="ticker-wrap">
+<div class="ticker">
+  <div class="ticker__item">{str_test}</div>
+  <div class="ticker__item">{str_test}</div> <!-- Duplicate content for a seamless loop -->
+</div>
+</div>
+<style>
+@keyframes ticker {{
+  0% {{ transform: translateX(0); }}
+  100% {{ transform: translateX(-50%); }} /* Move only half of the total width for looping */
+}}
+.ticker-wrap {{
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  padding: 10px 0;
+  color: #FFF;
+  font-size: 20px;
+  box-sizing: border-box;
+
+}}
+.ticker {{
+  display: flex;
+  width: fit-content;
+  animation: ticker 750s linear infinite;
+}}
+.ticker__item {{
+  white-space: nowrap;
+  padding-right: 75px; /* Space between items */
+}}
+</style>
+"""
+
 st.write("Draft Kings Betting Odds")
-# st.markdown(ticker_html, unsafe_allow_html=True)
-# st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown(ticker_html, unsafe_allow_html=True)
+st.markdown("<hr>", unsafe_allow_html=True)
 
 
 ticker_html2 = f"""
