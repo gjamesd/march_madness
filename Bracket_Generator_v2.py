@@ -682,7 +682,7 @@ if st.button('Generate Bracket'):
             #'objective': ['f1'],  
             }
 
-        gs = RandomizedSearchCV(xclass, parameters, cv = 7)
+        gs = RandomizedSearchCV(xclass, parameters, cv = 5)
         #gs = GridSearchCV(xclass, parameters, cv = 5)
         #gs.fit(X_train, y_train)
         
@@ -692,7 +692,7 @@ if st.button('Generate Bracket'):
 
 
         #save trained model in pickle file
-        timestr = time.strftime("%Y%m%d-%H%M")
+        #timestr = time.strftime("%Y%m%d-%H%M")
 
 
 
@@ -949,8 +949,8 @@ if st.button('Generate Bracket'):
     st.markdown(classification_report(y_a, bp))
     feat_imp = xgc.best_estimator_.feature_importances_
     feat_names2 = xgc.feature_names_in_
-    fig = px.bar(x=feat_names2, y=feat_imp,
-                 labels={'y':'importance'}, height=500)
+    #fig = px.bar(x=feat_names2, y=feat_imp,
+    #             labels={'y':'importance'}, height=500)
     
 
     #fig.write_html("../viz/feat_imp.html")  
