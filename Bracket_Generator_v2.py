@@ -688,7 +688,7 @@ if st.button('Generate Bracket'):
         
         # Fit the model with early stopping
         eval_set = [(X_train_resampled, y_train_resampled), (X_val, y_val)]
-        gs.fit(X_train_resampled, y_train_resampled, early_stopping_rounds=10, eval_metric="logloss", eval_set=eval_set, verbose=True)
+        gs.fit(X_train_resampled, y_train_resampled, early_stopping_rounds=7, eval_metric="logloss", eval_set=eval_set, verbose=True)
 
 
         #save trained model in pickle file
