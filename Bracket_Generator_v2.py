@@ -682,7 +682,7 @@ if st.button('Generate Bracket'):
             #'objective': ['f1'],  
             }
 
-        gs = RandomizedSearchCV(xclass, parameters, cv = 5)
+        gs = RandomizedSearchCV(xclass, parameters, cv = 7)
         #gs = GridSearchCV(xclass, parameters, cv = 5)
         #gs.fit(X_train, y_train)
         
