@@ -1,30 +1,31 @@
 import streamlit as st
 
+#import sklearn
 from sklearn.model_selection import RandomizedSearchCV
-from sklearn.metrics import classification_report 
+from sklearn.metrics import classification_report
 
 # to solve problems that I am encounterinbg
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt #plotting for visualization purposes of story telling 
+#import seaborn as sns
+#import matplotlib.pyplot as plt #plotting for visualization purposes of story telling
 import numpy as np
 
 #from tqdm import tqdm
 
-import seaborn as sns
-sns.set_palette(sns.color_palette('hls', 7))
+#import seaborn as sns
+#sns.set_palette(sns.color_palette('hls', 7))
 
 #from imblearn.over_sampling import RandomOverSampler
 import xgboost as xgb
-import plotly.express as px
+#import plotly.express as px
 
 
 #import warnings
 #warnings.filterwarnings('ignore')
-from tqdm import tqdm
+#from tqdm import tqdm
 
-import pickle 
-import time
+import pickle
+#import time
 from imblearn.over_sampling import SMOTE
 
 
