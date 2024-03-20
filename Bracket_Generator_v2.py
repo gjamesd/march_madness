@@ -197,7 +197,7 @@ eleven_1 =  st.selectbox(
 
     'First 10 seed play in game',
 
-    ('Virginia','Colorado St'))
+    ('Colorado St', 'Virginia',))
 
 #BSU V Colorado
 eleven_2 =  st.selectbox(
