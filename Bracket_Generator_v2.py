@@ -674,7 +674,8 @@ if st.button('Generate Bracket'):
         parameters = {
             'learning_rate': np.arange(0.01, 0.2, 0.01),
             'max_depth': np.arange(5, 30, 5),
-            'subsample': np.arange(0.5, 0.9, 0.1),
+            #'subsample': np.arange(0.5, 0.9, 0.1),
+            'subsample': np.arange(.3, .7, .1),
             'colsample_bytree': np.arange(0.5, 1.0, 0.1),
             'n_estimators' :np.arange(50, 500, 25), 
             #'reg_alpha': [0.1, 0.5, 1, 2, 5],  
