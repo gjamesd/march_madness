@@ -660,7 +660,8 @@ if st.button('Generate Bracket'):
         
         X_val = X_val[cols]
 
-        xclass = xgb.XGBClassifier()
+        xclass = xgb.XGBClassifier(n_jobs=-1, max_depth=10, 
+                                   tree_method= 'hist',)
         
         st.write("Training model") 
         
@@ -674,6 +675,7 @@ if st.button('Generate Bracket'):
             #'reg_alpha': [0.1, 0.5, 1, 2, 5],  
             #'reg_lambda': [0.1, 0.5, 1, 2, 5]
             #'objective': ['f1'],  
+            
             }
 
         gs = RandomizedSearchCV(xclass, parameters, cv = 5)
