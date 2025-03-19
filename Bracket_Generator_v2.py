@@ -660,7 +660,7 @@ if st.button('Generate Bracket'):
         
         X_val = X_val[cols]
 
-        xclass = xgb.XGBClassifier(n_jobs=-1, max_depth=25, 
+        xclass = xgb.XGBClassifier(n_jobs=-1, max_depth=15, 
                                    tree_method= 'hist',)
         
         st.write("Training model") 
