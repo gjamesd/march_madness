@@ -42,7 +42,7 @@ ticker_data = pd.read_csv('data/odds.csv',  encoding='latin-1')
 teams_df = pd.read_csv("data/MTeams.csv")
 power_seeds_df = pd.read_csv("data/PowerSeeds.csv")
 
-page_names = pd.read_csv("dictionaries/page_rank_names.csv")
+page_names = pd.read_csv("dictionaries/page_rank_names_2025.csv")
 total_dict = pickle.load(open('dictionaries/total_dict.pickle', 'rb'))
 #psd = pickle.load(open('dictionaries/psd.pickle', 'rb'))
 conf_affil = pickle.load(open('dictionaries/conf_affil.pickle', 'rb'))
@@ -63,9 +63,9 @@ cols = ['LS_power_conf','HSDR','sweet_16','first_round','HSTO','HS_power_seed',
  'HS_op_DR']
 
 
-str_test = ''
-for i in range(len(ticker_data)):
-    str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
+# str_test = ''
+# for i in range(len(ticker_data)):
+#     str_test += ticker_data['School'][i] +": + " +str(+ticker_data['Odds'][i])+", "
 
 st.set_page_config(
 
@@ -91,6 +91,12 @@ ranked_str = get_page_names(page_names)
 st.image("viz/mm.jpeg")
 st.write("# March Madness Machine Learning Generated Bracket :) ")
 
+
+odds_df = pd.read_csv('data/odds.csv')
+# Drop rows where 'Odds' is NaN or 'TBA'
+odds_df = odds_df[odds_df['Odds'].notnull() & (odds_df['Odds'] != 'TBA')]
+# Format as ticker string: "School +Odds | School +Odds | ..."
+str_test = ' | '.join(f"{row['School']} +{int(row['Odds'])}" for _, row in odds_df.iterrows())
 ticker_html = f"""
 <div class="ticker-wrap">
 <div class="ticker">
@@ -125,7 +131,7 @@ ticker_html = f"""
 </style>
 """
 
-st.write("Draft Kings Betting Odds")
+st.write("BetMGM Betting Odds To Win It All")
 st.markdown(ticker_html, unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True) 
 
@@ -177,37 +183,24 @@ st.write("### To run the algorithm, please select winners of the 'First Four' ga
 
 st.write("Sko Cougs!!!")
 
-#Howard v Wagner
-sixteen_1 =  st.selectbox(
-
+sixteen_1 = st.selectbox(
     'First 16 seed play in ',
+    ('American Univ', "Mt St Mary's"))
 
-    ('Howard','Wagner'))
-
-#Montana St v Gambling
-sixteen_2 =  st.selectbox(
-
+sixteen_2 = st.selectbox(
     'Second 16 play in game',
+    ('Alabama St', 'St Francis PA'))
 
-    ('Montana St','Grambling'))
-
-
-#Virginia v Colorado St 
-eleven_1 =  st.selectbox(
-
+eleven_1 = st.selectbox(
     'First 10 seed play in game',
+    ('Texas', 'Xavier'))
 
-    ('Colorado St', 'Virginia',))
-
-#BSU V Colorado
-eleven_2 =  st.selectbox(
-
+eleven_2 = st.selectbox(
     'Last play in game',
+    ('San Diego St', 'North Carolina'))
 
-    ('Boise St','Colorado'))
 
-
-year_ = 2024
+year_ = 2025
 
 
 
@@ -431,14 +424,14 @@ def build_second_round(result):
 def get_names(matchups):
     pyear = power_seeds[power_seeds['Season'] ==year_]
     
-    yd = dict(zip(pyear['PowerSeed '], pyear['TeamName']))
+    yd = dict(zip(pyear['PowerSeed'], pyear['TeamName']))
     for i in range(len(matchups)):
         st.write(yd[matchups[i][0]]+ " v " +yd[matchups[i][1]])
 
 def get_champ_names(matchups):
     pyear = power_seeds[power_seeds['Season'] ==year_]
     
-    yd = dict(zip(pyear['PowerSeed '], pyear['TeamName']))
+    yd = dict(zip(pyear['PowerSeed'], pyear['TeamName']))
     for i in range(len(matchups)):
         return (yd[matchups[i][0]]+ " v " +yd[matchups[i][1]])
         
@@ -584,11 +577,11 @@ if st.button('Generate Bracket'):
     
     def put_in_first_four(df):
     
-        eleven_1_index = df.loc[(df['Season'] == year_)&(df['PowerSeed '] == 38)].index[0]
-        eleven_2_index = df.loc[(df['Season'] == year_)&(df['PowerSeed '] == 39)].index[0]
+        eleven_1_index = df.loc[(df['Season'] == year_)&(df['PowerSeed'] == 42)].index[0]
+        eleven_2_index = df.loc[(df['Season'] == year_)&(df['PowerSeed'] == 44)].index[0]
 
-        sixteen_1_index = df.loc[(df['Season'] == year_)&(df['PowerSeed '] == 61)].index[0]
-        sixteen_2_index = df.loc[(df['Season'] == year_)&(df['PowerSeed '] == 62)].index[0]
+        sixteen_1_index = df.loc[(df['Season'] == year_)&(df['PowerSeed'] == 63)].index[0]
+        sixteen_2_index = df.loc[(df['Season'] == year_)&(df['PowerSeed'] == 64)].index[0]
 
         df['TeamName'][eleven_1_index] = eleven_1
         df['TeamName'][eleven_2_index] = eleven_2
@@ -620,7 +613,7 @@ if st.button('Generate Bracket'):
             season_dict = {}
             for index, row in season_group.iterrows():
                 team_name = row['TeamID']
-                power_seed = row['PowerSeed ']
+                power_seed = row['PowerSeed']
                 season_dict[team_name] = power_seed
             result_dict[season] = season_dict
     
@@ -781,8 +774,9 @@ if st.button('Generate Bracket'):
 
         
         #df['Season'] = str(year)
-        
-        
+        #st.write(df['HSTeamID'].iloc[0])
+        #st.write(total_dict[df['HSTeamID'].iloc[0]])
+    
 
         df['HSFGM'] = df.apply(lambda x: total_dict[x['HSTeamID']][year_]['FGM'], axis = 1)
         df['HSFGA'] = df.apply(lambda x: total_dict[x['HSTeamID']][x['Season']]['FGA'], axis = 1)

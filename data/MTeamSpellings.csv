@@ -58,6 +58,7 @@ arkansas-pine bluff,1115
 arkansas-pine-bluff,1115
 arkansas-st,1117
 arkansas-state,1117
+arkansas-pine bluff,1115
 armstrong,1118
 armstrong st,1118
 army,1119
@@ -242,6 +243,7 @@ east carolina,1187
 east tenn. st.,1190
 east tennessee st.,1190
 east tennessee state,1190
+east texas a&m,1477
 east-carolina,1187
 east-tennessee-state,1190
 eastern ill.,1183
@@ -270,6 +272,7 @@ f dickinson,1192
 fairfield,1193
 fairleigh dickinson,1192
 fairleigh-dickinson,1192
+fdu,1192
 fgcu,1195
 fiu,1198
 fl atlantic,1194
@@ -347,6 +350,7 @@ houston,1222
 houston bap,1223
 houston baptist,1223
 houston chr,1223
+houston christian,1223
 houston-baptist,1223
 howard,1224
 idaho,1225
@@ -365,6 +369,7 @@ illinois state,1229
 illinois-chicago,1227
 illinois-st,1229
 illinois-state,1229
+illinois-chicago,1227
 incarnate word,1230
 incarnate-word,1230
 indiana,1231
@@ -382,6 +387,8 @@ iowa state,1235
 iowa-st,1235
 iowa-state,1235
 ipfw,1236
+iu indianapolis,1237
+iu indy,1237
 iupu - ft. wayne,1236
 iupu-fort wayne,1236
 iupu-fort-wayne,1236
@@ -400,6 +407,7 @@ jacksonville-state,1240
 james madison,1241
 james-madison,1241
 kansas,1242
+kansas city,1282
 kansas st,1243
 kansas st.,1243
 kansas state,1243
@@ -432,6 +440,7 @@ lindenwood,1473
 lipscomb,1252
 little rock,1114
 little-rock,1114
+liu,1254
 liu brooklyn,1254
 liu-brooklyn,1254
 long beach st,1253
@@ -452,6 +461,7 @@ louisiana-lafayette,1418
 louisiana-monroe,1419
 louisiana-state,1261
 louisiana-tech,1256
+louisiana-monroe,1419
 louisville,1257
 loy marymount,1258
 loyola (il),1260
@@ -475,6 +485,7 @@ marquette,1266
 marshall,1267
 maryland,1268
 maryland - e. shore,1271
+maryland eastern shore,1271
 maryland-baltimore county,1420
 maryland-baltimore-county,1420
 maryland-eastern shore,1271
@@ -493,6 +504,7 @@ md e shore,1271
 md. eastern shore,1271
 memphis,1272
 mercer,1273
+mercyhurst,1479
 merrimack,1467
 miami (fl),1274
 miami (fla.),1274
@@ -753,6 +765,7 @@ princeton,1343
 providence,1344
 purdue,1345
 purdue fort wayne,1236
+queens (nc),1474
 queens nc,1474
 quinnipiac,1346
 radford,1347
@@ -780,14 +793,12 @@ saint francis (pa),1384
 saint john`s,1385
 saint joseph's,1386
 saint joseph`s,1386
-saint joseph’s,1386
 saint louis,1387
 saint mary's,1388
 saint mary's (ca),1388
 saint mary`s,1388
 saint peter's,1389
 saint peter`s,1389
-saint peter’s,1389
 saint thomas (minn.),1472
 saint-francis-pa,1384
 saint-josephs,1386
@@ -936,12 +947,13 @@ st. francis-ny,1383
 st. john's,1385
 st. john's (ny),1385
 st. john`s (ny),1385
-st. john’s,1385
 st. joseph's,1386
 st. joseph's pa,1386
 st. mary's,1388
+st. mary's (ca),1388
 st. mary`s (ca),1388
 st. peter's,1389
+st. thomas,1472
 stanford,1390
 stephen f. austin,1372
 stephen-f-austin,1372
@@ -976,6 +988,8 @@ texas a&m cc,1394
 texas a&m corpus,1394
 texas a&m-cc,1394
 texas a&m-corpus christi,1394
+texas a&m-commerce,1477
+texas a&m-corpus christi,1394
 texas arlington,1426
 texas christian,1395
 texas rio grande valley,1410
@@ -1001,6 +1015,7 @@ texas-southern,1411
 texas-st,1402
 texas-state,1402
 texas-tech,1403
+texas-rio grande valley,1410
 texasa&m,1401
 the citadel,1154
 the-citadel,1154
@@ -1025,6 +1040,7 @@ uc santa barbara,1364
 uc-davis,1413
 uc-irvine,1414
 uc-riverside,1415
+uc-san diego,1471
 uc-santa barbara,1364
 uc-santa-barbara,1364
 ucf,1416
@@ -1109,6 +1125,7 @@ weber st.,1451
 weber state,1451
 weber-st,1451
 weber-state,1451
+west georgia,1480
 west texas a&m,1446
 west virginia,1452
 west-virginia,1452
